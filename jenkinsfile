@@ -1,23 +1,23 @@
 pipeline {
     agent any
    
-stages {
+    stages {
         stage('clone') {
             steps {
                  git branch: 'main', credentialsId: 'b12a32b2-8d2d-4521-aed9-af7c84742037', url: 'https://github.com/YashSanjayNakharekar/DEVOP2-2.git'
             }
             }
-    stages {
+   
         stage('Compile') {
             steps {
                 bat 'javac hello.java'
             }
             }
-          stage('Run') {
+    stage('Run') {
             steps {
                 bat 'java hello'
             }
         }
     }
 }
-}
+
